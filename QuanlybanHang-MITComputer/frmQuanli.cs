@@ -216,24 +216,24 @@ namespace QuanlybanHang_MITComputer
         }
 
         //Update Data grid view Nhân viên
-        private void updateGridData()
+        private void updateGridDataNhanvien()
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\c#\QuanlybanHang-MITComputer\QuanlybanHang-MITComputer\Quanlybanhang.mdf;Integrated Security=True";
             con.Open();
-            String sql = "Select * from tblSanPham ORDER BY Ngaynhap DESC";
+            String sql = "Select * from tblNhanVien ORDER BY NgayNhap DESC";
             DataSet ds = new DataSet();
             SqlDataAdapter dap = new SqlDataAdapter(sql, con);
             dap.Fill(ds);
-            dgvListSanphams.DataSource = ds.Tables[0];
-            dgvListSanphams.Refresh();
+            dtgListNV.DataSource = ds.Tables[0];
+            dtgListNV.Refresh();
             con.Close();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string sql = "SELECT * FROM tblNhanVien WHERE MaNV= '"+textCodeNV.Text+"'";
-
+            string sql = "SELECT * FROM tblNhanVien WHERE MaNV LIKE '%"+textCodeNV.Text+"%'";
+            Class.Functions.RunSQL(sql);
         }
 
         private void txtCodeNVSearch_KeyUp(object sender, KeyEventArgs e)
