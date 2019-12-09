@@ -65,6 +65,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Functions.cs" />
+    <Compile Include="form\admin\frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\admin\frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\admin\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\admin\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\frmBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\frmBanHang.Designer.cs">
+      <DependentUpon>frmBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +119,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanlybanhangDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="share\share.cs" />
+    <EmbeddedResource Include="form\admin\frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\admin\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\frmBanHang.resx">
+      <DependentUpon>frmBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </EmbeddedResource>

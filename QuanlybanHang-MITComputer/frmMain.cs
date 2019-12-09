@@ -28,5 +28,38 @@ namespace QuanlybanHang_MITComputer
             frm.Show();
 
         }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            string sql = "SELECT COUNT(*) FROM tblSanPham";
+            lblNumberSP.Text = share.share.getRowCount(sql).ToString();
+        }
+
+        private void MenuLogout_Click(object sender, EventArgs e)
+        {
+            form.admin.frmLogin frmLogin = new form.admin.frmLogin();
+            this.Hide();
+            frmLogin.Show();
+        }
+
+        private void MenuDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            using (form.admin.frmDoiMatKhau frmDoiMatKhau = new form.admin.frmDoiMatKhau())
+            {
+                DialogResult result = frmDoiMatKhau.ShowDialog();
+                if(result == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+                
+        }
+
+        private void BánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            form.frmBanHang frmBanHang = new form.frmBanHang();
+            frmBanHang.Show();
+        }
     }
 }

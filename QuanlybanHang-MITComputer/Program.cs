@@ -16,7 +16,8 @@ namespace QuanlybanHang_MITComputer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new form.admin.frmLogin());
+            //Application.Run(new frmMain());
         }
     }
 }
